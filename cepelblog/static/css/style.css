@@ -1,0 +1,372 @@
+/* -------------------------------------------------------------------
+ * HEADER STYLES
+ * ------------------------------------------------------------------- */
+
+.s-header {
+    background-color: #2f363e;
+}
+
+.header__logo img {
+    height: 4rem;
+    width: auto !important;
+}
+
+.header__nav-wrap {
+    background-color: #2f363e;
+}
+
+.header__top {
+    background-color: #2f363e;
+}
+
+.header__social .ss-linkedin a::after {
+    background-image: url(../img/icons/icon-linkedin.svg);
+}
+
+.header__social .ss-twitter a::after {
+    background-image: url(../img/icons/icon-twitter.svg);
+}
+
+.header__social .ss-email a::after {
+    background-image: url(../img/icons/icon-email.svg);
+}
+
+
+/* -------------------------------------------------------------------
+ * QUOTE CARD
+ * ------------------------------------------------------------------- */
+
+.format-quote blockquote p,
+.format-link .link-wrap h2 {
+    color: white;
+    padding: 4rem 0rem 0rem 0rem;
+}
+
+.format-quote cite,
+.format-link cite {
+    color: white;
+}
+
+.format-quote {
+    width: 100%;
+    min-height: 120px !important;
+}
+
+.quote_card {
+    min-height: auto !important;
+    height: 180px;
+    background: linear-gradient(135deg, #13b497 0%, #05737a 100%) !important;
+}
+
+
+/* -------------------------------------------------------------------
+ * ADJUSTING THEME STYLES
+ * ------------------------------------------------------------------- */
+
+ .go-top a, .go-top a:visited {
+     background-image: url('../img/icons/icon-arrow-up.svg');
+     background-color: #111;
+ }
+
+.aboutme-img {
+    height: 40rem;
+    width: auto;
+}
+
+.masonry .entry__thumb {
+    border-radius: 0.75rem 0.75rem 0rem 0rem;
+}
+
+.header__social a:hover {
+    background-color: #13B497;
+}
+
+.masonry__brick {
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+.entry__header-meta a {
+    color: rgb(0, 136, 209);
+}
+
+.date {
+    color: rgb(109, 111, 111);
+}
+
+.latest-blog-header {
+    width: 100%;
+    margin-bottom: 2rem !important;
+}
+
+.latest-blog-header-text {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid;
+    border-color: rgba(var(--text-color));
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.help-block {
+    color: #dc3545 !important;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-bottom: 1px solid #13b497;
+    ;
+}
+
+.entry__post-thumb {
+    text-align: center;
+}
+
+
+/* -------------------------------------------------------------------
+ * DARK THEME COLOR STYLES
+ * ------------------------------------------------------------------- */
+
+body {
+    --text-color: #222;
+    --bkg-color: #f6f7f8;
+    --blog-bg-color: white;
+    --content-color: rgb(41, 41, 41);
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #24292d;
+    --blog-bg-color: #2f363e;
+    --content-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: #eee;
+        --bkg-color: #24292d;
+        --blog-bg-color: #2f363e;
+        --content-color: rgba(255, 255, 255, 0.6);
+    }
+    body.light-theme {
+        --text-color: #222;
+        --bkg-color: #f6f7f8;
+        --blog-bg-color: white;
+        --content-color: rgb(41, 41, 41);
+    }
+}
+
+body {
+    background: var(--bkg-color);
+    color: var(--text-color);
+}
+
+h1,
+p {
+    color: var(--text-color);
+}
+
+.entry__content h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote p,
+ul li,
+p {
+    color: var(--text-color);
+}
+
+.entry__content pre code {
+    color: #222;
+}
+
+label,
+legend {
+    color: var(--text-color);
+}
+
+.entry__content blockquote {
+    border-color: var(--content-color);
+}
+
+.masonry .entry__text {
+    background-color: var(--blog-bg-color);
+    border-radius: 0rem 0rem 0.75rem 0.75rem;
+}
+
+.masonry .entry__title a {
+    color: var(--text-color);
+}
+
+.masonry .entry__meta a {
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.entry__tags span {
+    color: var(--text-color);
+}
+
+.entry__tags .entry__tag-list a {
+    color: var(--text-color);
+    border-color: var(--text-color)
+}
+
+#email {
+    color: var(--text-color);
+}
+
+#password {
+    color: var(--text-color);
+}
+
+.form-group .required input {
+    color: var(--text-color) !important;
+}
+
+tr td,
+th {
+    color: var(--text-color) !important;
+}
+
+.pgn__num {
+    color: var(--text-color);
+}
+
+.latest-blog-header-text span {
+    background: var(--bkg-color);
+    padding: 0 10px;
+    transition: background 0.2s linear;
+}
+
+.footer__copyright {
+    color: var(--text-color);
+    opacity: 0.4;
+}
+
+.footer__copyright a {
+    color: var(--text-color);
+}
+
+.modal-content {
+    background-color: var(--bkg-color);
+    border-radius: 0.75rem;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    color: var(--text-color) !important;
+}
+
+
+/* -------------------------------------------------------------------
+ * TOGGLE BUTTON STYLES
+ * ------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    transition: background 0.2s linear;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+
+/* -------------------------------------------------------------------
+ * PAGINATION STYLES
+ * ------------------------------------------------------------------- */
+
+.pgn .current,
+.pgn .current:hover {
+    background-color: var(--text-color);
+    color: var(--bkg-color);
+}
+
+.pgn__prev {
+    background-image: url('../img/icons/icon-arrow-left.svg');
+}
+
+.pgn__next {
+    background-image: url('../img/icons/icon-arrow-right.svg');
+}
+
+.btn-update {
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+    color: white !important;
+}
+
+.btn-update:hover {
+    background-color: #138496 !important;
+}
+
+.btn-delete {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+.btn-delete:hover {
+    background-color: #c82333 !important;
+}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="masonry">
+
+    <div class="grid-sizer"></div>
+
+    <!-- iterate blog posts  
+        ================================================== -->
+    {% for post in blog_posts.items %}
+
+    <article class="masonry__brick entry format-standard animate-this">
+
+        <div class="entry__thumb">
+            <a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" class="entry__thumb-link">
+                <img src="{{ url_for('static', filename='blog_banners/'+post.banner_image) }}">
+            </a>
+        </div>  <!-- end entry__thumb -->
+
+        <!-- entry__text -->
+        <div class="entry__text">
+            <div class="entry__header">
+
+                <h2 class="entry__title">
+                    <a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+
+                <!-- entry__meta -->
+                <div class="entry__meta">
+                    <span class="entry__meta-cat">
+                        {% for tag in post.tags %}
+                        <a href="{{ url_for('blog_posts.tag', tag_name=tag) }}">{{ tag }}</a>
+                        {% endfor %}
+                    </span>
+                    <span class="entry__meta-date">
+                        <a href="single-standard.html">{{ post.date.strftime('%b %d, %Y') }}</a>
+                    </span>
+                </div>  <!-- end entry__meta -->
+
+            </div>  <!-- end entry__header -->
+        </div> <!-- end entry__text -->
+
+    </article> <!-- end article -->
+
+    {% endfor %}
+
+</div> <!-- end masonry -->
+
+<!-- pagination
+        ================================================== -->
+<div class="row">
+    <div class="column large-full">
+        <nav class="pgn animate-this">
+            <ul>
+                {% for page_num in blog_posts.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+
+                    <!-- Checking the first page for pgn__prev -->
+                    {% if blog_posts.has_prev%}
+                        <li><a class="pgn__prev" href="{{ url_for('core.blog', page=blog_posts.page-1) }}">Prev</a></li>
+                    {% else %}
+                        <li><a class="pgn__prev" href="{{ url_for('core.blog', page=blog_posts.page) }}">Prev</a></li>
+                    {% endif%}
+
+
+                    {% if blog_posts.page == page_num %}
+                        <li><a class="pgn__num current" href="{{ url_for('core.blog', page=blog_posts.page) }}">{{ page_num }}</a></li>
+                    {% elif page_num == none %}
+                        <li><span class="pgn__num dots">...</span></li>
+                    {% else %}
+                        <li><a class="pgn__num" href="{{ url_for('core.blog', page=page_num) }}">{{ page_num }}</a></li>
+                    {% endif %}
+
+                    <!-- Checking the last page for pgn__next -->
+                    {% if blog_posts.has_next %}
+                        <li><a class="pgn__next" href="{{ url_for('core.blog', page=blog_posts.page+1) }}">Next</a></li>
+                    {% else%}
+                        <li><a class="pgn__next" href="{{ url_for('core.blog', page=blog_posts.page) }}">Next</a></li>
+                    {% endif%}
+
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}

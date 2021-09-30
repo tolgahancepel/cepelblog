@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+<section id="styles" class="column large-full">
+
+    <div class="row half-bottom">
+
+        <div class="column large-full animated animate-this">
+
+            <form action="{{ url_for('tags.create') }}" style="display: inline-block;">
+                <input type="submit" value="Create" class="btn btn-update">
+            </form>
+
+            <!-- table-responsive -->
+            <div class="table-responsive">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tag</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for tag in tags %}
+                            <tr>
+                                <td>{{ tag.id }}</td>
+                                <td>{{ tag.name}}</td>
+                                <td>
+                                    <form action="{{ url_for('tags.delete', tag_id=tag.id) }}" method="POST" style="margin: 0 !important;">
+                                        <input class="btn btn-delete" type="submit" value="X">
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>  <!-- end table-responsive -->
+
+        </div>  <!-- end column -->
+    </div> <!-- end row -->
+
+</section> <!-- end styles -->
+
+{% endblock %}
