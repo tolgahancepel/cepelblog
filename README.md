@@ -1,5 +1,10 @@
 ## cepelblog — Flask Web Application for Blogging
 **Live on Heroku: http://cepelblog.herokuapp.com/**
+
+#### Test account:
+email: test@test.com  
+password: 123
+
 ### Description
 cepelblog is a Flask Web application that allows you to create blog posts, tags and also authenticate users. The blog posts have a rich text editor (CKEditor), and also tags that you can connect.
 
