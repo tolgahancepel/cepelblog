@@ -79,8 +79,6 @@ def update(blog_post_id):
     
     banner_img = url_for('static', filename='blog_banners/'+blog_post.banner_image)
 
-    print("#############################")
-    print(banner_img)
     return render_template('create_post.html', banner_img=banner_img,
                            blog_post=blog_post, title='Updating', form=form)
 
